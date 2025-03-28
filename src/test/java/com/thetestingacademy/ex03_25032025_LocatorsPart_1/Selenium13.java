@@ -1,4 +1,4 @@
-package com.thetestingacademy.ex03_25032025;
+package com.thetestingacademy.ex03_25032025_LocatorsPart_1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.Test;
-import static org.assertj.core.api.Assertions.*;
 
 public class Selenium13 {
     @Test

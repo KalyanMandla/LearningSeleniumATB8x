@@ -1,4 +1,4 @@
-package com.thetestingacademy.ex03_25032025;
+package com.thetestingacademy.Tasks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,9 +7,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.Test;
 
-import java.util.List;
+import static org.assertj.core.api.Assertions.assertThat;
 
-public class Selenium15 {
+public class Task02 {
+
     @Test
     public void testMethod1() throws InterruptedException {
 
@@ -32,14 +33,13 @@ public class Selenium15 {
         WebElement buttonlogin = driver.findElement(By.id("btn-login"));
         buttonlogin.click();
 
-        // Make Appointment
-        WebElement facility_list = driver.findElement(By.id("combo_facility"));
-        facility_list.click();
+        Thread.sleep(3000);
 
-
-
-
+        assertThat(driver.getCurrentUrl()).isEqualTo("https://katalon-demo-cura.herokuapp.com/#appointment");
+        // https://katalon-demo-cura.herokuapp.com/profile.php#login
+        // https://katalon-demo-cura.herokuapp.com/#appointment
 
         driver.quit();
     }
+
 }

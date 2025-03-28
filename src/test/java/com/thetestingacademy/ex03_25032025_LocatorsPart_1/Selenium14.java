@@ -1,4 +1,4 @@
-package com.thetestingacademy.ex03_25032025;
+package com.thetestingacademy.ex03_25032025_LocatorsPart_1;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
