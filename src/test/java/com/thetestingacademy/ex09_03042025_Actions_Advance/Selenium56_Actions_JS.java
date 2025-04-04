@@ -1,7 +1,8 @@
-package com.thetestingacademy.ex07_31032025_Actions_Windows_Iframes_Part_1;
+package com.thetestingacademy.ex09_03042025_Actions_Advance;
 
 import io.qameta.allure.Description;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -10,8 +11,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Selenium41_Actions_P6 {
-
+public class Selenium56_Actions_JS {
     EdgeDriver driver;
 
     @BeforeTest
@@ -22,22 +22,23 @@ public class Selenium41_Actions_P6 {
         driver = new EdgeDriver(options);
 
     }
-    @Description("Verify FileUpload")
-    @Test
-    public void test_file_upload() throws InterruptedException {
 
-        String URL = "https://awesomeqa.com/selenium/upload.html";
+    @Description("Verify JS")
+    @Test
+    public void test_js() throws InterruptedException {
+
+        String URL = "https://selectorshub.com/xpath-practice-page/";
         driver.get(URL);
         driver.manage().window().maximize();
 
-        WebElement uploadFileInput = driver.findElement(By.id("fileToUpload"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        String dir = System.getProperty("user.dir");
-        System.out.println(dir);
-        // C:\Users\MANDKALY\IdeaProjects\LearningSeleniumATB8x
-        // src/test/java/com/thetestingacademy/ex07_31032025_Actions_Windows_Iframes_Part_1/Hello.txt
-        uploadFileInput.sendKeys(dir+"/src/test/java/com/thetestingacademy/ex07_31032025_Actions_Windows_Iframes_Part_1/Hello.txt");
-        driver.findElement(By.name("submit"));
+        WebElement div_to_scroll = driver.findElement(By.xpath("//div[@id='userName']"));
+        js.executeScript("arguments[0].scrollIntoView(true);", div_to_scroll);
+        // js.executeScript("window.scrollTo(0,1000)"); // another method for scroll
+//        String html = (String) js.executeScript("arguments[0].innerHTML;", div_to_scroll);
+//        System.out.println(html);
+
 
 
     }
@@ -51,4 +52,5 @@ public class Selenium41_Actions_P6 {
         }
         driver.quit();
     }
+
 }
